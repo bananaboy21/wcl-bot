@@ -9,6 +9,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print('Bot is online, and ready to ROLL!')
+    await bot.change_presence(activity=discord.Game(name="+help for help!"))
     
 
 @bot.command()
