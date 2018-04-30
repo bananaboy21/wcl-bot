@@ -22,6 +22,7 @@ async def help(ctx):
     em.add_field(name="s2forms", value="Gets the signup forms for WCL season 2.", inline=False)
     em.add_field(name="delete [number of msgs]", value="Deletes a number of messages.", inline=False)
     em.add_field(name="role [user] [role name]", value="Gives a user a certain role.", inline=False)
+    em.add_field(name='visitors [user]', value='Gives visitor role to user.', inline=False)
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/423921506737717248/423930582028779522/IMG-20171209-WA0004.jpg")
     await ctx.send(embed=em)
     
@@ -81,7 +82,15 @@ async def role(ctx, user: discord.Member, role):
         await ctx.send(f"Successfully gave **{str(user)}** the **{r.name}** role.")
     except discord.Forbidden:
         await ctx.send("Bot does not have Manage Roles permission.")
-
+        
+@bot.command(aliases=['visitor'])
+@commands.has_pernissions(manage_roles = True)
+async def visitors(ctx, uswr: discord.Member):
+    if ctx.guild.id != 389162246627917826:
+        return
+    r = discord.utils.get(ctx.guild.roles, name='visitors')
+    await user.add_roles(r)
+    await ctx.send(f"Successfully added **visitors** role to **{str(user)}**")
     
 bot.run(os.environ.get('TOKEN'))
     
