@@ -84,7 +84,7 @@ async def role(ctx, user: discord.Member, role):
         await ctx.send("Bot does not have Manage Roles permission.")
         
 @bot.command(aliases=['visitor'])
-@commands.has_pernissions(manage_roles = True)
+@commands.has_permissions(manage_roles = True)
 async def visitors(ctx, uswr: discord.Member):
     if ctx.guild.id != 389162246627917826:
         return
