@@ -92,5 +92,22 @@ async def visitors(ctx, user: discord.Member):
     await user.add_roles(r)
     await ctx.send(f"Successfully added **visitors** role to **{str(user)}**")
     
+    
+@bot.command(aliases=['seasoninfo', 'info'])
+async def s2info(ctx, Type=None):
+    if not Type:
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444241632997408779/all_together.png?width=1442&height=503"
+    elif Type.lower() == 'armored':
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444239344371367947/Armored_Clans.png?width=488&height=676"
+    elif Type.lower() == 'airborne':
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444239340068012064/Airborne_Clans.png?width=488&height=676"
+    elif Type.lower() == 'infantry':
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444239349073051648/Infantry_Clans.png?width=488&height=676"
+    else:
+        return await ctx.send("Unknown name. Either leave blank or choose from **armored**, **airborne**, or **infantry**.")
+    em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Information")
+    em.set_image(image_link)
+    await ctx.send(embed=em)
+    
 bot.run(os.environ.get('TOKEN'))
     
