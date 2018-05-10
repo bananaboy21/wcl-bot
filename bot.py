@@ -23,6 +23,7 @@ async def help(ctx):
     em.add_field(name="delete [number of msgs]", value="Deletes a number of messages.", inline=False)
     em.add_field(name="role [user] [role name]", value="Gives a user a certain role.", inline=False)
     em.add_field(name='visitors [user]', value='Gives visitor role to user.', inline=False)
+    em.add_field(name='s2info <type>', value='Gives information on WCL season 2!', inline=False)
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/423921506737717248/423930582028779522/IMG-20171209-WA0004.jpg")
     await ctx.send(embed=em)
     
