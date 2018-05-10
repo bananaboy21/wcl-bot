@@ -107,7 +107,7 @@ async def s2info(ctx, Type=None):
     else:
         return await ctx.send("Unknown name. Either leave blank or choose from **armored**, **airborne**, or **infantry**.")
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Information")
-    em.set_image(image_link)
+    em.set_image(url=image_link)
     await ctx.send(embed=em)
     
 bot.run(os.environ.get('TOKEN'))
