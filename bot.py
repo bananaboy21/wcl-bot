@@ -24,6 +24,7 @@ async def help(ctx):
     em.add_field(name="role [user] [role name]", value="Gives a user a certain role.", inline=False)
     em.add_field(name='visitors [user]', value='Gives visitor role to user.', inline=False)
     em.add_field(name='s2info <type>', value='Gives information on WCL season 2!', inline=False)
+    em.add_field(name='schedule', value='Gives a schedule on WCL season 2 events.', inline=False)
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/423921506737717248/423930582028779522/IMG-20171209-WA0004.jpg")
     await ctx.send(embed=em)
     
@@ -108,6 +109,13 @@ async def s2info(ctx, Type=None):
         return await ctx.send("Unknown name. Either leave blank or choose from **armored**, **airborne**, or **infantry**.")
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Information")
     em.set_image(url=image_link)
+    await ctx.send(embed=em)
+    
+    
+@bot.command()
+async def schedule(ctx):
+    em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Schedule")
+    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/444601719704387584/schedual.png?width=1442&height=601")
     await ctx.send(embed=em)
     
 bot.run(os.environ.get('TOKEN'))
