@@ -98,11 +98,11 @@ async def visitors(ctx, user: discord.Member):
 @bot.command(aliases=['seasoninfo', 'info'])
 async def s2info(ctx, Type=None):
     if not Type:
-        image_link = "https://media.discordapp.net/attachments/389441146100776970/444241632997408779/all_together.png?width=1442&height=503"
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444609686298296330/all_together.png?width=1442&height=503"
     elif Type.lower() == 'armored':
-        image_link = "https://media.discordapp.net/attachments/389441146100776970/444239344371367947/Armored_Clans.png?width=488&height=676"
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444609653708423168/Armored_Clans.png?width=488&height=676"
     elif Type.lower() == 'airborne':
-        image_link = "https://media.discordapp.net/attachments/389441146100776970/444239340068012064/Airborne_Clans.png?width=488&height=676"
+        image_link = "https://media.discordapp.net/attachments/389441146100776970/444609634938912789/Airborne_Clans.png?width=488&height=676"
     elif Type.lower() == 'infantry':
         image_link = "https://media.discordapp.net/attachments/389441146100776970/444239349073051648/Infantry_Clans.png?width=488&height=676"
     else:
@@ -115,7 +115,7 @@ async def s2info(ctx, Type=None):
 @bot.command()
 async def schedule(ctx):
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Schedule")
-    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/444601719704387584/schedual.png?width=1442&height=601")
+    em.set_image(url="https://cdn.discordapp.com/attachments/389441146100776970/444609716421787649/schedual.png")
     await ctx.send(embed=em)
     
 bot.run(os.environ.get('TOKEN'))
