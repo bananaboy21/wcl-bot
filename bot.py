@@ -25,6 +25,7 @@ async def help(ctx):
     em.add_field(name='visitors [user]', value='Gives visitor role to user.', inline=False)
     em.add_field(name='s2info <type>', value='Gives information on WCL season 2!', inline=False)
     em.add_field(name='schedule', value='Gives a schedule on WCL season 2 events.', inline=False)
+    em.add_field(name='hw', value='Get information on WCL\'s Heavy Weight League.', inline=False)
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/423921506737717248/423930582028779522/IMG-20171209-WA0004.jpg")
     await ctx.send(embed=em)
     
@@ -116,6 +117,13 @@ async def s2info(ctx, Type=None):
 async def schedule(ctx):
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Schedule")
     em.set_image(url="https://cdn.discordapp.com/attachments/389441146100776970/444609716421787649/schedual.png")
+    await ctx.send(embed=em)
+    
+    
+@bot.command(aliases=['hw'])
+async def heavyweight(ctx):
+    em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Heavy Weight Info")
+    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/445313123809886228/heavy-weight-signup.gif?width=875&height=676")
     await ctx.send(embed=em)
     
 bot.run(os.environ.get('TOKEN'))
