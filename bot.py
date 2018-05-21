@@ -26,9 +26,14 @@ async def help(ctx):
     em.add_field(name='s2info <type>', value='Gives information on WCL season 2!', inline=False)
     em.add_field(name='schedule', value='Gives a schedule on WCL season 2 events.', inline=False)
     em.add_field(name='hw', value='Get information on WCL\'s Heavy Weight League.', inline=False)
+    em.add_field(name='invite', value='Gets the invite link for WCL server.', inline=False)
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/423921506737717248/423930582028779522/IMG-20171209-WA0004.jpg")
     await ctx.send(embed=em)
+
     
+@bot.command()
+async def invite(ctx):
+    await ctx.send("https://discord.gg/WfNATEn")
 
 @bot.command()
 async def twitter(ctx):
