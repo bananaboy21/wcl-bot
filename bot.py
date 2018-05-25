@@ -38,14 +38,13 @@ async def invite(ctx):
 
 @bot.command()
 async def links(ctx):
-    """Gives WCL's twitter link."""
     await ctx.send(textwrap.dedent("""
     :globe_with_meridians: __**WCL Links**__ :globe_with_meridians: 
    **Twitter**: https://twitter.com/wcl_warriors
    **Facebook**: https://www.facebook.com/Warriors-Championship-League-WCL-2002735889992134/
    **Instagram**: https://www.instagram.com/warriors_championship_league/
    **Website**: https://warriorschampionshipleague.weebly.com/
-   """)
+   """))
     
     
     
