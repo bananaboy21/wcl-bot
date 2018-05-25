@@ -1,5 +1,6 @@
 import discord
 import os
+import textwrap
 import io
 from discord.ext import commands
 bot = commands.Bot(command_prefix="+",owner_id=277981712989028353)
@@ -15,8 +16,7 @@ async def on_ready():
 @bot.command()
 async def help(ctx):
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Bot Help")
-    em.add_field(name="twitter", value="Gives WCL's twitter link.", inline=False)
-    em.add_field(name="website", value="Gives WCL's website link.", inline=False)
+    em.add_field(name="links", value="All useful WCL links!", inline=False)
     em.add_field(name="s1winner", value="Gives the winner for WCL season 1.", inline=False)
     em.add_field(name="rules", value="Gets the rules for WCL.", inline=False)
     em.add_field(name="s2forms", value="Gets the signup forms for WCL season 2.", inline=False)
@@ -37,15 +37,17 @@ async def invite(ctx):
     await ctx.send("https://discord.gg/WfNATEn")
 
 @bot.command()
-async def twitter(ctx):
+async def links(ctx):
     """Gives WCL's twitter link."""
-    await ctx.send("WCL Twitter: \nhttps://twitter.com/wcl_warriors")
+    await ctx.send(textwrap.dedent("""
+    :globe_with_meridians: __**WCL Links**__ :globe_with_meridians: 
+   **Twitter**: https://twitter.com/wcl_warriors
+   **Facebook**: https://www.facebook.com/Warriors-Championship-League-WCL-2002735889992134/
+   **Instagram**: https://www.instagram.com/warriors_championship_league/
+   **Website**: https://warriorschampionshipleague.weebly.com/
+   """)
     
     
-@bot.command()
-async def website(ctx):
-    """Gives WCL's website link"""
-    await ctx.send("WCL Website: \nhttps://warriorschampionshipleague.weebly.com/")
     
     
 @bot.command()
