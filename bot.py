@@ -28,6 +28,7 @@ async def help(ctx):
     em.add_field(name='hw', value='Get information on WCL\'s Heavy Weight League.', inline=False)
     em.add_field(name='invite', value='Gets the invite link for WCL server.', inline=False)
     em.add_field(name='wm', value='Gets war match info.', inline=False)
+    em.add_field(name='pointtable', value='Gets the point table for S2 light weight.', inline=False)
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/423921506737717248/423930582028779522/IMG-20171209-WA0004.jpg")
     await ctx.send(embed=em)
 
@@ -46,7 +47,12 @@ async def links(ctx):
    **Website**: https://warriorschampionshipleague.weebly.com/
    """))
     
-    
+
+@bot.command()
+async def pointtable(ctx):
+    em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCl S2: Light Weight - Point Table")
+    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/452568971015880704/point_table.png?width=1442&height=661")
+    await ctx.send(embed=em)
     
     
 @bot.command()
