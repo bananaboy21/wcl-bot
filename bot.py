@@ -51,7 +51,7 @@ async def links(ctx):
 @bot.command()
 async def pointtable(ctx):
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCl S2: Light Weight - Point Table")
-    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/452618603569872897/point_table.png?width=1442&height=661")
+    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/454999530543382539/point_table.png?width=1442&height=661")
     await ctx.send(embed=em)
     
     
