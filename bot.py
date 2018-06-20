@@ -47,6 +47,13 @@ async def links(ctx):
    **Website**: https://warriorschampionshipleague.weebly.com/
    """))
     
+    
+@bot.command()
+async def clans(ctx):
+    em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Clans: S2 Heavy Weight")
+    em.set_image(url="https://media.discordapp.net/attachments/389365839465545742/458490064817881098/all_together_Heavy.png?width=1442&height=503")
+    await ctx.send(embed=em)
+    
 
 @bot.command()
 async def pointtable(ctx):
@@ -127,9 +134,14 @@ async def s2info(ctx, Type=None):
     
     
 @bot.command()
-async def schedule(ctx):
+async def schedule(ctx, Type=None):
+    if not Type:
+        return await ctx.send("Which schedule? Heavy/light.")
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="WCL Season 2 Schedule")
-    em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/446772242634899456/schedual.png?width=1442&height=601")
+    if Type.lower() == "light":
+        em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/446772242634899456/schedual.png?width=1442&height=601")
+    elif Type.lower() == "heavy":
+        em.set_image(url="https://images-ext-1.discordapp.net/external/wp40WsHejrAuRGIs0eAmtN1uJErnaGDEIpPmsanmjlE/%3Fwidth%3D1441%26height%3D600/https/media.discordapp.net/attachments/389441146100776970/458704795746697216/Sch_heavy.png")
     await ctx.send(embed=em)
     
     
