@@ -141,7 +141,7 @@ async def schedule(ctx, Type=None):
     if Type.lower() == "light":
         em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/446772242634899456/schedual.png?width=1442&height=601")
     elif Type.lower() == "heavy":
-        em.set_image(url="https://images-ext-1.discordapp.net/external/wp40WsHejrAuRGIs0eAmtN1uJErnaGDEIpPmsanmjlE/%3Fwidth%3D1441%26height%3D600/https/media.discordapp.net/attachments/389441146100776970/458704795746697216/Sch_heavy.png")
+        em.set_image(url="https://media.discordapp.net/attachments/389441146100776970/464528605393715200/Sch_heavy.png?width=1442&height=601")
     await ctx.send(embed=em)
     
     
